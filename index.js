@@ -3,9 +3,8 @@ const app = express();
 const dotenv = require("dotenv").config({ path: "./config.env" });
 const Port = process.env.PORT || 8000;
 const cors = require("cors");
-const corsOptions = require("./config/corsOptions");
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
